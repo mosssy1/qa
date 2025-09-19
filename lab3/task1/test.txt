@@ -1,0 +1,20 @@
+Range: oneCell, manyCells	
+Format: Equal, EqualOrMore, EqualOrLess, More, Less, notEqual, between, notBetween, yourLogicExpression, Date, dateBefore, dateAfter, containsData, notContainsData, textContains, textNotContains, textStartsWith, textEndsOn, textContainsPattern
+TypeCell: Default, Date, Text, Number
+Bold: Y, N
+Italic:	Y, N
+Underline: Y, N
+Strikethrough: Y, N
+Color-text: None, Default, Standart, Custom
+Color-cell: None, Default, Standart, Custom
+CellForRule: None, Date, Text, Formula
+
+if [Format] in {"Equal", "EqualOrMore", "EqualOrLess", "More", "Less", "notEqual", "between", "notBetween", "yourLogicExpression"} then [TypeCell] = "Number";
+if [Format] in {"date", "dateBefore", "dateAfter"} then [TypeCell] = "Date";
+if [Format] in { "textContains", "textNotContains", "textStartsWith", "textEndsOn", "textContainsPattern"} then [TypeCell] = "Text";
+if [Format] in {"containsData", "notContainsData"} then [TypeCell] = "Default";	
+
+if [Format] in {"containsData", "notContainsData"} then [CellForRule] = "None";
+if [Format] in {"date", "dateBefore", "dateAfter"} then [CellForRule] = "Date";
+if [Format] in {"textContains", "textNotContains", "textStartsWith", "textEndsOn", "textContainsPattern"} then [CellForRule] in {"Text", "Formula"};
+
