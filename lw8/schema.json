@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+      "alias": {
+        "type": "string"
+      },
+      "cat": {
+        "type": "string"
+      },
+      "category_id": {
+        "type": "string",
+        "pattern": "^(1[0-5]|[1-9])$"
+      },
+      "content": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "hit": {
+        "type": "string",
+        "pattern": "^[01]$"
+      },
+      "id": {
+        "type": "string",
+        "pattern": "^\\d+$"
+      },
+      "img": {
+        "type": "string",
+        "pattern": ".*\\.(jpe?g|png|webp)"
+      },
+      "keywords": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "old_price": {
+        "type": "string",
+        "pattern": "^\\d+(.\\d+)?$"
+      },
+      "price": {
+        "type": "string",
+        "pattern": "^\\d+(.\\d+)?$"
+      },
+      "status": {
+        "type": "string",
+        "pattern": "^[01]$"
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "alias",
+      "cat",
+      "category_id",
+      "content",
+      "description",
+      "hit",
+      "id",
+      "img",
+      "keywords",
+      "old_price",
+      "price",
+      "status",
+      "title"
+    ]
+  }
